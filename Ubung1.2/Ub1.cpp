@@ -1,6 +1,7 @@
-#include<iostream>
+
 #include "Ub1.h"
 #include "pch.h"
+#include<iostream>
 using namespace std;
 int Prim(int n)
 {
