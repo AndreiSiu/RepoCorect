@@ -14,7 +14,7 @@ int main()
 		cout << "\nWahle eine Option: ";
 		cin >> key;
 		if (key == 1) {
-			//pune aici!
+			schema1();
 		}
 		if (key == 2) {
 			Show_Ub9();
