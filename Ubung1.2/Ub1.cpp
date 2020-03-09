@@ -1,7 +1,7 @@
-
-#include "Ub1.h"
 #include "pch.h"
 #include<iostream>
+#include "Ub1.h"
+
 using namespace std;
 int Prim(int n)
 {
@@ -55,7 +55,7 @@ void schema1()
 		cout << "\nWahle eine Option: ";
 		cin >> key;
 		if (key == 1) {
-			UB1_b();
+			UB1_a();
 		}
 		if (key == 2) {
 			UB1_b();
