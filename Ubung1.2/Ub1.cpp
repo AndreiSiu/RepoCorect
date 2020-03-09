@@ -1,13 +1,9 @@
 #include "pch.h"
-<<<<<<< HEAD
 #include<iostream>
 #include "Ub1.h"
-=======
-#include "Ub1.h"
-#include<iostream>
->>>>>>> 12f18b1cd419404d668cf306afe35a3608c88dd6
 
 using namespace std;
+
 int Prim(int n)
 {
 	if (n < 2)
