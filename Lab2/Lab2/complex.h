@@ -15,4 +15,8 @@ public:
 
 	double GetImag();
 
+	void SetImag(double imag);
+
+	void SetReal(double real);
+
 };
