@@ -79,4 +79,15 @@ Complex Complex::quot(Complex x)
 	r /= (x.real * x.real + x.imag * x.imag);
 	i /= (x.real * x.real + x.imag * x.imag);
 	return Complex(r, i);
+
+}
+
+Complex Complex::mul(Complex x)
+{ //functie care returneaza inmultirea a doua numere complexe
+	return Complex(this->real * x.real - this->imag * x.imag, this->imag * x.real + this->real * x.imag);
+}
+
+Complex Complex::add(Complex x)
+{ //functie care returneaza adunarea a doua numere complexe
+	return Complex(this->real + x.real, this->imag + x.imag);
 }

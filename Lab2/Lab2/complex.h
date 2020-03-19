@@ -23,14 +23,13 @@ public:
 
 	void show_expo(void);
 
-	Complex add(Complex x);
-
-	Complex mul(Complex x);
-
-	Complex quot(Complex x);
+	Complex quot(Complex real);
 
 	double abs();
 
 	Complex compute_polar();
 
+	Complex mul(Complex real);
+
+	Complex add(Complex real);
 };
