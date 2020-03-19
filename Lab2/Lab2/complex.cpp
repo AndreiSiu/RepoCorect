@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "complex.h"
+#include <cmath>
 #include <iostream>
+
+using namespace std;
 
 Complex::Complex(double imag, double real) {
 
@@ -26,4 +29,54 @@ void Complex::SetImag(double imag)
 void Complex::SetReal(double real)
 { //Setter pentru var privata real
 	this->real = real;
+}
+
+void Complex::show_compl() {
+	//de la show_complex, doar arata forma lui
+
+	cout << this->imag << 'i' << " + " << this->real << '\n';
+}
+
+double Complex::abs(){
+	//radacina/modulul unui numar complex
+	//e nevoie de ea si la show_expo
+
+	return sqrt(this->real * this->real + this->imag * this->imag);
+}
+
+void Complex::show_expo() {
+	//arata/calculeaza forma eponentiala a numarului complex
+
+	double r = this->abs();
+	double a, pi = 3.1415;
+
+	if (this->real == 0)
+	{
+		if (this->imag > 0)
+			a = pi / 2;
+		else
+			a = -pi / 2;
+	}
+	else
+		if (this->real > 0)
+			a = atan(this->imag / this->real);
+		else
+			a = atan(this->imag / this->real) + pi;
+
+	cout << r << " * e^( i*" << a << " )";
+}
+
+Complex Complex::quot(Complex x)
+{
+	//functie ce imparte 2 numere complexe
+	if (x.real == 0 || x.imag == 0)
+	{
+		exception div_by_zero;
+		throw div_by_zero;
+	}
+
+	double r = (this->real * x.real + this->imag * x.imag), i = (this->imag * x.real - this->real * x.imag);
+	r /= (x.real * x.real + x.imag * x.imag);
+	i /= (x.real * x.real + x.imag * x.imag);
+	return Complex(r, i);
 }

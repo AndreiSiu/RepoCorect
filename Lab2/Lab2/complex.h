@@ -19,4 +19,18 @@ public:
 
 	void SetReal(double real);
 
+	void show_compl(void);
+
+	void show_expo(void);
+
+	Complex add(Complex x);
+
+	Complex mul(Complex x);
+
+	Complex quot(Complex x);
+
+	double abs();
+
+	Complex compute_polar();
+
 };
