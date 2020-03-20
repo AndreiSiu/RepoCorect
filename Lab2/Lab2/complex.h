@@ -27,9 +27,9 @@ public:
 
 	double abs();
 
-	Complex compute_polar();
-
 	Complex mul(Complex real);
 
 	Complex add(Complex real);
+
+	Complex polar_form();
 };
