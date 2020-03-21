@@ -63,7 +63,7 @@ void Complex::show_expo() {
 		else
 			a = atan(this->imag / this->real) + pi;
 
-	cout << r << " * e^( i*" << a << " )";
+	cout << r << " * e^( i*" << a << " )"<<'\n';
 }
 
 Complex Complex::quot(Complex x)
