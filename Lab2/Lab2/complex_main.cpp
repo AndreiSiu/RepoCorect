@@ -57,9 +57,14 @@ int main()
 	}
 	cout << "Die Summe der complexe Zahlen ist: ";
 	sum.show_compl();
-
+	Complex c1 = Complex(3, 4);
+	Complex c2 = Complex(2, 5);
+	c1.mul(c2);
+	c1.show_compl();
+	c1.quot(c2);
+	c1.polar_form();
 	cout << "Fertig";
-	system("pause");
+	//system("pause");
 	return 0;
 }
 
