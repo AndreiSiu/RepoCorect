@@ -55,14 +55,20 @@ int main()
 	for (int i = 0; i < anzahl; i++) {
 		sum = sum.add(c[i]);
 	}
-	cout << "Die Summe der complexe Zahlen ist: ";
+	cout << "Die Summe der complexen Zahlen ist: ";
 	sum.show_compl();
-	Complex c1 = Complex(3, 4);
-	Complex c2 = Complex(2, 5);
+	Complex c1 = Complex(3.0f, 4.0f);
+	Complex c2 = Complex(2.0f, 5.0f);
 	c1.mul(c2);
 	c1.show_compl();
+
 	c1.quot(c2);
-	c1.polar_form();
+	c1.show_compl();
+
+	Complex cp = c1.polar_form();
+
+	cp.show_compl();
+
 	cout << "Fertig";
 	//system("pause");
 	return 0;
