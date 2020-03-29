@@ -83,7 +83,32 @@ Node *Tree::Delete(Node *root, int key) {
 	return root;
 }
 
+void PostOrder(Node *node)
+{
+	if (node == NULL)
+		return;
+	PostOrder(node->left);
+	PostOrder(node->right);
+	std::cout << node->value << " ";
+}
 
+void InOrder(Node *node)
+{
+	if (node == NULL)
+		return;
+	InOrder(node->left);
+	std::cout << node->value << " ";
+	InOrder(node->right);
+}
+
+void PreOrder(Node *node)
+{
+	if (node == NULL)
+		return;
+	std::cout << node->value << " ";
+	PreOrder(node->left);
+	PreOrder(node->right);
+}
 
 Tree::~Tree()
 {
