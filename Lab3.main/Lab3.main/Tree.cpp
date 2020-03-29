@@ -83,7 +83,7 @@ Node *Tree::Delete(Node *root, int key) {
 	return root;
 }
 
-void PostOrder(Node *node)
+void Tree::PostOrder(Node *node)
 {
 	if (node == NULL)
 		return;
@@ -92,7 +92,7 @@ void PostOrder(Node *node)
 	std::cout << node->value << " ";
 }
 
-void InOrder(Node *node)
+void Tree::InOrder(Node *node)
 {
 	if (node == NULL)
 		return;
@@ -101,13 +101,45 @@ void InOrder(Node *node)
 	InOrder(node->right);
 }
 
-void PreOrder(Node *node)
+void Tree::PreOrder(Node *node)
 {
 	if (node == NULL)
 		return;
 	std::cout << node->value << " ";
 	PreOrder(node->left);
 	PreOrder(node->right);
+}
+
+int Tree::Nodes(Node *node)
+{//contorizeaza nr de noduri
+	int count = 1;
+	if (node == nullptr)
+		return 0;
+	else
+	{
+		count += Nodes(node->left);
+		count += Nodes(node->right);
+	}
+	return count;
+}
+
+int Tree::Edges(Node *node)
+{//returneaza nr de margini
+	return Nodes(node) - 1;
+}
+
+int max(int a, int b)
+{
+	if (a < b)
+		return b;
+	return a;
+}
+
+int Tree::Height(Node *node)
+{//returneaza inaltimea lui Tree
+	if (node == NULL)
+		return -1;
+	return max(Height(node->left), Height(node->right)) + 1;
 }
 
 Tree::~Tree()

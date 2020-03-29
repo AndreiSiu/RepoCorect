@@ -16,11 +16,15 @@ public:
 
 	void PostOrder(Node *node);
 
-	void Inorder(Node *node);
+	void InOrder(Node *node);
 
 	void PreOrder(Node *node);
 
-	Node *minValue(Node *node);
+	int Nodes(Node *node);
+
+	int Edges(Node *node);
+
+	int Height(Node *node);
 
 	~Tree();
 };
