@@ -109,7 +109,7 @@ Complex Complex::polar_form()
 			a = atan(this->imag / this->real);
 		else
 			a = atan(this->imag / this->real) + PI;
-
+	
 	//partea imaginara si reala a formei polare
 	double Nreal = r * cos(a), Nimag = r * sin(a);
 	return Complex(Nreal, Nimag);

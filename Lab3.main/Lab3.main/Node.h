@@ -1,8 +1,14 @@
 #pragma once
+//#include "Tree.h"
 class Node
 {
-public:
-	Node();
-	~Node();
+	friend class Tree;
+	private:
+		int info;
+		Node* left;
+		Node* right;
+//public:
+	//Node();
+	//~Node();
 };
 

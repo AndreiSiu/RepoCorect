@@ -6,4 +6,7 @@
 int main()
 {
     std::cout << "Hello World!\n"; 
+
+	Tree tree_root = Tree();
+
 }
