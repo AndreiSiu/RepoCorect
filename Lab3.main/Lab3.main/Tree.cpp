@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Tree.h"
 #include <stdio.h>
+#include <queue>
+#include <iostream>
 
 
 Tree::Tree()
@@ -29,19 +31,19 @@ Node *Tree::CreateTreeNode(int value) {
 	return temp;
 }
 
-Node *Tree::Insert(int value, Node *root) {
+Node *Tree::Insert(int value, Node *node) {
 
-	if (root == nullptr) {
-		return this->CreateTreeNode(value);
+	if (node == NULL) {
+		return CreateTreeNode(value);
 	}
 
-	if (value <= root->info) {
-		root->left = Insert(value, root->left);
+	if (value <= node->info) {
+		node->left = Insert(value, node->left);
 	}
-	else if (value > root->info) {
-		root->right = Insert(value, root->right);
+	else if (value >= node->info) {
+		node->right = Insert(value, node->right);
 	}
-
+	return node;
 }
 
 Node *Tree::Delete(Node *root, int key) {
@@ -89,7 +91,7 @@ void Tree::PostOrder(Node *node)
 		return;
 	PostOrder(node->left);
 	PostOrder(node->right);
-	std::cout << node->value << " ";
+	std::cout << node->info << " ";
 }
 
 void Tree::InOrder(Node *node)
@@ -97,7 +99,7 @@ void Tree::InOrder(Node *node)
 	if (node == NULL)
 		return;
 	InOrder(node->left);
-	std::cout << node->value << " ";
+	std::cout << node->info << " ";
 	InOrder(node->right);
 }
 
@@ -105,7 +107,7 @@ void Tree::PreOrder(Node *node)
 {
 	if (node == NULL)
 		return;
-	std::cout << node->value << " ";
+	std::cout << node->info << " ";
 	PreOrder(node->left);
 	PreOrder(node->right);
 }

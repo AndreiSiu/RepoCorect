@@ -14,6 +14,8 @@ public:
 
 	Node *Delete(Node *node, int value);
 
+	Node *minValue(Node *node);
+
 	void PostOrder(Node *node);
 
 	void InOrder(Node *node);
